@@ -1,0 +1,180 @@
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 700px;  /* Aumenta el ancho máximo del contenedor */
+    background-color: #F1F7FE;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    margin-top: 50px; /* Ajusta el espacio superior */
+    padding: 16px; /* Agrega un poco de padding al contenedor */
+  }
+  
+  /* Estilo del formulario */
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px 24px 24px;
+    gap: 24px; /* Aumenta el espacio entre los elementos */
+    text-align: center;
+  }
+  
+  /* Estilo de la cabecera */
+  form .head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* Título en la cabecera */
+  form .head span {
+    font-size: 1.6rem;
+    font-weight: bolder;
+    color: black;
+  }
+  
+  /* Descripción en la cabecera */
+  form .head p {
+    font-size: 1.1rem;
+    color: #7C6666;
+  }
+  
+  /* Estilo de los inputs */
+  form .inputs {
+    overflow: hidden;
+    background-color: #fff;
+    width: 100%;  /* Hacer el input más largo que el contenedor */
+    margin: 1rem auto; /* Centra el input y ajusta el margen superior e inferior */
+    border-radius: 8px;
+    border-bottom: none;
+    outline: 0;
+  }
+  
+  
+  
+  form .inputs input {
+    border: none;
+    outline: none;
+    padding: 8px 15px;
+    width: 100%; /* Hace el input al 100% del contenedor */
+    height: 40px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.299);
+    font-weight: 200;
+  }
+  
+  /* Estilo del botón */
+  form button {
+    background-color: #5c6bc0;
+    color: white;
+    width: 100%;
+    height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 0;
+    overflow: hidden;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    margin-top: 16px; /* Añade separación entre los inputs y el botón */
+  }
+  
+  form button:hover {
+    background-color: #3c4784;
+  }
+  
+  /* Estilo de los botones de selección */
+  ul.nav-pills {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 20px; /* Aumenta el espacio entre los botones */
+    margin-bottom: 24px; /* Espacio entre los botones y el formulario */
+  }
+  
+  ul.nav-pills .nav-item .nav-link {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid transparent; /* Agrega borde transparente para mantener el tamaño */
+    color: #4287ef; /* Color del texto del botón */
+    transition: all 0.3s ease; /* Transición suave */
+  }
+  
+  ul.nav-pills .nav-item .nav-link.active {
+    background-color: #5c6bc0;
+    color: white;
+    border: 0.5px solid #5c6bc0; /* Borde azul cuando está activo */
+  }
+  
+  ul.nav-pills .nav-item .nav-link:not(.active) {
+    background-color: transparent;
+    color: #5c6bc0; /* Color del texto cuando no está activo */
+    border: 0.5px solid #5c6bc0; /* Solo el borde azul cuando no está activo */
+  }
+  
+  /* Estilo del pie de formulario */
+  .form-footer {
+    background-color: #e0ecfb;
+    padding: 16px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .form-footer a {
+    font-weight: bolder;
+    color: #5c6bc0;
+    transition: all 3s ease-in-out;
+  }
+  
+  .form-footer a:hover {
+    color: #ffffff;
+  }
+  
+  /* Estilos adicionales para centrar el contenedor */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+  }
+  /* Estilo del navbar */
+.navbar {
+    margin-bottom: 20px; /* Espacio debajo del navbar */
+  }
+  
+  /* Estilo de los inputs y botones */
+  .inputs input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  button {
+    width: 100%;
+    height: 40px;
+    background-color: #5c6bc0;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ffffff;
+  }
+  
+  /* Estilo para el contenedor principal */
+  .container {
+    max-width: 700px;
+    background-color: #F1F7FE;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 0 auto; 
+    margin-top: 50px; 
+    padding: 16px;
+  }

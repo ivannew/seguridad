@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="currentView === 'encriptar'" (click)="onViewChange('encriptar')">Encriptar</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [class.active]="currentView === 'desencriptar'" (click)="onViewChange('desencriptar')">Desencriptar</a>
+    </li>
+  </ul>
+
+  <!-- Formulario de Encriptar -->
+  <form [formGroup]="encriptarForm" *ngIf="currentView === 'encriptar'" (ngSubmit)="onEncriptar()">
+    <div class="head">
+      <span>Bienvenido a la App</span>
+      <p>Esta aplicación te permite encriptar textos de forma fácil y rápida.</p>
+    </div>
+    <div class="inputs">
+      <input type="text" placeholder="Introduce el texto para encriptar" formControlName="texto" />
+    </div>
+    <button type="submit" [disabled]="!encriptarForm.valid">Encriptar</button>
+    <p *ngIf="resultadoEncriptar">Texto encriptado: {{ resultadoEncriptar }}</p>
+  </form>
+  
+ 
+  
+  <!-- Formulario de Desencriptar -->
+  <form [formGroup]="desencriptarForm" *ngIf="currentView === 'desencriptar'" (ngSubmit)="onDesencriptar()">
+    <div class="head">
+      <span>Bienvenido a la App</span>
+      <p>Esta aplicación te permite desencriptar textos de forma fácil y rápida.</p>
+    </div>
+    <div class="inputs">
+      <input type="text" placeholder="Introduce el texto para desencriptar" formControlName="texto" />
+    </div>
+    <button type="submit" [disabled]="!desencriptarForm.valid">Desencriptar</button>
+    <p *ngIf="resultadoDesencriptar">Texto desencriptado: {{ resultadoDesencriptar }}</p>
+  </form>
+  
+  <!-- Mostrar resultado de desencriptación -->
+ 
+</div>

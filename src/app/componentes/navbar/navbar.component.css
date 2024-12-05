@@ -1,0 +1,20 @@
+/* Estilos para el Navbar */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 20px;
+  }
+  
+  .navbar-brand {
+    color: white !important;
+  }
+  
+  .navbar .btn {
+    color: white;
+    background-color: #dc3545;
+    border: none;
+  }
+  
+  .navbar .btn:hover {
+    background-color: #c82333;
+  }
+  

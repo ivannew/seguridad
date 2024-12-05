@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div class="container" [class.active]="isActive">
+      <!-- Formulario de Registro -->
+      <div class="form-container sign-up">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <h1>Crear Usuario</h1>
+          <span>Usa tu Email para registrarte</span>
+          
+          <!-- Nombre -->
+          <input formControlName="name" type="text" placeholder="Nombre">
+          <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+            <small *ngIf="registerForm.get('name')?.errors?.['required']" style="color: rgb(255, 0, 0); font-size: 12px;">El nombre es obligatorio.</small>
+          </div>
+
+          <!-- Correo -->
+          <input formControlName="email" type="email" placeholder="Correo">
+          <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+            <small *ngIf="registerForm.get('email')?.errors?.['required']" style="color: rgb(255, 0, 0); font-size: 12px;">El correo es obligatorio.</small>
+            <small *ngIf="registerForm.get('email')?.errors?.['email']" style="color: rgb(255, 0, 0); font-size: 12px;">El correo no es válido.</small>
+          </div>
+
+          <!-- Contraseña -->
+          <input formControlName="password" type="password" placeholder="Contraseña">
+          <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+            <small *ngIf="registerForm.get('password')?.errors?.['required']" style="color: rgb(255, 0, 0); font-size: 12px;">
+              La contraseña es obligatoria.
+            </small>
+            <small *ngIf="registerForm.get('password')?.errors?.['minlength']" style="color: rgb(255, 0, 0); font-size: 12px;">
+              La contraseña debe tener al menos 8 caracteres.
+            </small>
+            <small *ngIf="registerForm.get('password')?.errors?.['pattern']" style="color: rgb(255, 0, 0); font-size: 12px;">
+              A-1-!
+            </small>
+          </div>
+          
+          
+
+          <button type="submit" [disabled]="registerForm.invalid">Registrate</button>
+        </form>
+      </div>
+
+      <!-- Formulario de Ingreso -->
+      <div class="form-container sign-in">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <h1>Inicia Sesión</h1>
+          <span>Usa tu correo para ingresar</span>
+          
+          <!-- Correo -->
+          <input formControlName="email" type="email" placeholder="Correo">
+          <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+            <small *ngIf="loginForm.get('email')?.errors?.['required']" style="color: rgb(255, 0, 0); font-size: 12px;">El correo es obligatorio.</small>
+            <small *ngIf="loginForm.get('email')?.errors?.['email']" style="color: rgb(255, 0, 0); font-size: 12px;">El correo no es válido.</small>
+          </div>
+
+          <!-- Contraseña -->
+          <input formControlName="password" type="password" placeholder="Contraseña">
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <small *ngIf="loginForm.get('password')?.errors?.['required']" style="color: rgb(255, 0, 0); font-size: 12px;">La contraseña es obligatoria.</small>
+            <small *ngIf="registerForm.get('password')?.errors?.['minlength']" style="color: rgb(255, 0, 0); font-size: 12px;">
+                La contraseña debe tener al menos 8 caracteres.
+              </small>
+          </div>
+
+          <button type="submit" [disabled]="loginForm.invalid">Iniciar Sesión</button>
+        </form>
+      </div>
+
+      <!-- Panel de cambio entre vistas -->
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h1>Bienvenido de Vuelta!</h1>
+            <p>Entra con tu Correo y Contraseña si ya creaste tu usuario</p>
+            <button class="hidden" (click)="activateLogin()">Iniciar Sesión</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h1>Hola Amigo!</h1>
+            <p>En caso de que eres nuevo por favor ingresa aquí para crear tu usuario</p>
+            <button class="hidden" (click)="activateRegister()">Registrarte</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
